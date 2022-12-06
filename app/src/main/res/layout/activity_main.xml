@@ -1,18 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FBFAFA"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tv_first_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_above="@+id/et_first_name"
+        android:layout_alignStart="@id/et_first_name"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="5dp"
+        android:text="First Name"
+        android:textSize="18dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/et_first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        android:layout_above="@+id/radio_group"
+        android:layout_alignStart="@+id/tv_email"
+        android:layout_marginBottom="10dp"
+        android:hint="First Name" />
+
+    <TextView
+        android:id="@+id/tv_last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/et_last_name"
+        android:layout_alignBottom="@id/tv_first_name"
+        android:textSize="18dp"
+        android:text="Last Name" />
+
+
+    <EditText
+        android:id="@+id/et_last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/radio_group"
+        android:layout_marginStart="125dp"
+        android:layout_marginLeft="40dp"
+        android:layout_alignBottom="@+id/et_first_name"
+        android:layout_toEndOf="@+id/tv_first_name"
+        android:ems="8"
+        android:hint="Last Name" />
+
+    <TextView
+        android:id="@+id/tv_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_birthday"
+        android:layout_alignStart="@+id/tv_birthday"
+        android:layout_marginBottom="20dp"
+        android:text="Gender"
+        android:textSize="18dp" />
+
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="150dp"
+        android:text="Register" />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_register"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="5dp"
+        android:text="I agree to Term of Use" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_gender"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-10dp"
+        android:layout_toRightOf="@+id/tv_gender"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:id="@+id/radio_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male" />
+
+        <RadioButton
+
+            android:id="@+id/radio_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/et_birthday"
+        android:layout_alignStart="@+id/et_birthday"
+        android:layout_marginBottom="5dp"
+        android:text="Birthday"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/et_birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_address"
+        android:layout_alignStart="@+id/et_email"
+        android:layout_marginBottom="5dp"
+        android:ems="13"
+        android:hint="Birthday"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/btn_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/et_birthday"
+        android:layout_marginLeft="15dp"
+        android:layout_toEndOf="@+id/et_birthday"
+
+        android:text="Select" />
+
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/et_address"
+        android:layout_alignStart="@+id/et_address"
+        android:text="Address"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_email"
+        android:layout_alignStart="@+id/et_email"
+        android:layout_marginBottom="10dp"
+        android:ems="18"
+        android:hint="Address"
+        android:lines="2"
+
+        android:singleLine="false"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/et_email"
+        android:layout_alignStart="@+id/et_email"
+        android:text="Email"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkbox"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:ems="18"
+        android:hint="Email" />
+
+
+</RelativeLayout>
